@@ -18,8 +18,8 @@ Before using this project, create:
 ### S3 Bucket
 
 ```bash
-aws s3api create-bucket --bucket my-terraform-state-bucket --region us-east-1 \
-  --create-bucket-configuration LocationConstraint=us-east-1
+aws s3api create-bucket --bucket tf-demo-bucket-shankaz --region ap-south-1 \
+  --create-bucket-configuration LocationConstraint=ap-south-1
 
 aws s3api put-bucket-versioning \
   --bucket my-terraform-state-bucket \
@@ -60,5 +60,5 @@ terraform destroy
 
 ## 🧰 Notes
 
-- State file is stored in `s3://my-terraform-state-bucket/env/dev/ec2.tfstate`
+- State file is stored in `s3://tf-demo-bucket-shankaz/env/dev/ec2.tfstate`
 - Locking is handled by `terraform-locks` table in DynamoDB
